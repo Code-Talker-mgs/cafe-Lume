@@ -1,0 +1,251 @@
+<!doctype html>
+<html lang="ja">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>café Lume ー ホッとする時間</title>
+    <meta name="description" content="日常の、ちょっと特別な時間を。" />
+    <meta name="robots" content="noindex" />
+
+    <!-- リセットCSS -->
+    <link rel="stylesheet" href="https://unpkg.com/ress/dist/ress.min.css" />
+    <!-- スタイルCSS -->
+    <link rel="stylesheet" href="css/style.css" />
+    <!-- ファビコン -->
+    <link rel="icon" href="img/favicon.png" />
+    <!-- フォント -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+JP:wght@500&family=Lora:ital,wght@0,400..700;1,400..700&family=M+PLUS+Rounded+1c:wght@700&family=Noto+Serif:ital,wght@1,100..900&family=Philosopher&family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Roboto+Condensed:ital,wght@0,100..900;1,100..900&family=Roboto+Flex:opsz,wght@8..144,100..1000&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap"
+      rel="stylesheet"
+    />
+    <!-- アイコン -->
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0&icon_names=dark_mode"
+    />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0&icon_names=sunny"
+    />
+    <!-- スクリプトJS -->
+    <script src="js/script.js" defer></script>
+  </head>
+  <body>
+    <header class="header">
+      <div class="header-container wrapper">
+        <h1 class="header-title">
+          <a href="index.html" class="site-logo">café <span>Lume</span></a>
+        </h1>
+        <nav class="nav" aria-label="ナビゲーション">
+          <button
+            id="hamburger"
+            class="hamburger-btn"
+            type="button"
+            aria-expanded="false"
+            aria-controls="nav-item"
+          >
+            <span></span>
+            <span></span>
+            <span></span>
+          </button>
+          <ul id="nav-item" class="nav-items">
+            <li><a href="index.html">ホーム</a></li>
+            <li><a href="menu.html">メニュー</a></li>
+            <li><a href="contact.html">お問い合わせ</a></li>
+            <li>
+              <button class="theme-btn">
+                <span class="material-symbols-outlined"> dark_mode </span>
+                <p>暗くする</p>
+              </button>
+            </li>
+          </ul>
+          <div id="overlay" class="overlay"></div>
+        </nav>
+      </div>
+    </header>
+    <main>
+      <div class="main-visual">
+        <img src="img/main_menu_visual.jpg" alt="" />
+      </div>
+      <div class="main-menu-container wrapper">
+        <h1 class="main-menu-title">メニュー</h1>
+        <div class="main-menu-text">
+          <p>日常の、ちょっと特別な時間を。</p>
+          <p>
+            一杯のコーヒーに、心を込めて。選び抜かれた豆を丁寧にドリップした、至福に味わいをお届けします。
+          </p>
+          <p>
+            午後のティータイムを彩る、とっておきのスイーツ。季節の素材を活かした、見た目も美しいケーキをお楽しみください。
+          </p>
+        </div>
+        <section class="menu-items">
+          <!--グリッド指定-->
+          <section class="drink-items">
+            <h2>ドリンク</h2>
+            <figure class="menu-item fade-in">
+              <img src="img/coffee2.jpg" alt="ホットコーヒー" />
+              <figcaption class="menu-item fade-in">
+                ホットコーヒー
+                <span class="price">￥400</span>
+              </figcaption>
+            </figure>
+            <figure class="menu-item fade-in">
+              <img src="img/ice-coffee.jpg" alt="アイスコーヒー" />
+              <figcaption class="menu-item fade-in">
+                アイスコーヒー
+                <span class="price">￥400</span>
+              </figcaption>
+            </figure>
+            <figure class="menu-item fade-in">
+              <img src="img/cappuccino.jpg" alt="カプチーノ" />
+              <figcaption class="menu-item fade-in">
+                カプチーノ
+                <span class="price">￥420</span>
+              </figcaption>
+            </figure>
+            <figure class="menu-item fade-in">
+              <img src="img/latte.jpg" alt="カフェラテ" />
+              <figcaption class="menu-item fade-in">
+                カフェラテ
+                <span class="price">￥420</span>
+              </figcaption>
+            </figure>
+            <figure class="menu-item fade-in">
+              <img src="img/straight_tea.jpg" alt="紅茶" />
+              <figcaption class="menu-item fade-in">
+                ストレート
+                <span class="price">￥400</span>
+              </figcaption>
+            </figure>
+            <figure class="menu-item fade-in">
+              <img src="img/remon-tea.jpg" alt="レモンティー" />
+              <figcaption class="menu-item fade-in">
+                レモンティー
+                <span class="price">￥430</span>
+              </figcaption>
+            </figure>
+          </section>
+          <section class="cake-items">
+            <h2>ケーキ</h2>
+            <figure class="menu-item fade-in">
+              <img src="img/short_cake.jpg" alt="" />
+              <figcaption class="menu-item fade-in">
+                ショートケーキ
+                <span class="price">￥500</span>
+              </figcaption>
+            </figure>
+            <figure class="menu-item fade-in">
+              <img src="img/cheese_cake.jpg" alt="" />
+              <figcaption class="menu-item fade-in">
+                チーズケーキ
+                <span class="price">￥550</span>
+              </figcaption>
+            </figure>
+            <figure class="menu-item fade-in">
+              <img src="img/chocolate_cake.jpg" alt="" />
+              <figcaption class="menu-item fade-in">
+                チョコレートケーキ
+                <span class="price">￥600</span>
+              </figcaption>
+            </figure>
+            <figure class="menu-item fade-in">
+              <img src="img/mont_blanc.jpg" alt="" />
+              <figcaption class="menu-item fade-in">
+                モンブラン
+                <span class="price">￥700</span>
+              </figcaption>
+            </figure>
+            <h2>パンケーキ</h2>
+            <figure class="menu-item fade-in">
+              <img src="img/pan-cake.jpg" alt="" />
+              <figcaption class="menu-item fade-in">
+                パンケーキ
+                <span class="price">￥650</span>
+              </figcaption>
+            </figure>
+            <figure class="menu-item fade-in">
+              <img src="img/fruits-pan-cake.jpg" alt="" />
+              <figcaption class="menu-item fade-in">
+                フルーツパンケーキ
+                <span class="price">￥750</span>
+              </figcaption>
+            </figure>
+          </section>
+          <section class="afternoon-tea-items">
+            <h2>アフタヌーンティー</h2>
+            <figure class="menu-item fade-in">
+              <img src="img/afternoon-tea.jpg" alt="" />
+              <figcaption class="menu-item fade-in">
+                アフタヌーンティーセット
+                <span class="price">￥900</span>
+              </figcaption>
+            </figure>
+            <figure class="menu-item fade-in">
+              <img src="img/scone.jpg" alt="" />
+              <figcaption class="menu-item fade-in">
+                スコーン
+                <span class="price">￥450</span>
+              </figcaption>
+            </figure>
+            <figure class="menu-item fade-in">
+              <img src="img/chocolate_scone.jpg" alt="" />
+              <figcaption class="menu-item fade-in">
+                チョコレートスコーン
+                <span class="price">￥550</span>
+              </figcaption>
+            </figure>
+          </section>
+          <section class="tarte-items">
+            <h2>タルト</h2>
+            <figure class="menu-item fade-in">
+              <img src="img/tarte.jpg" alt="" />
+              <figcaption class="menu-item fade-in">
+                フルーツたっぷりタルト
+                <span class="price">￥600</span>
+              </figcaption>
+            </figure>
+            <figure class="menu-item fade-in">
+              <img src="img/mini_tarte.jpg" alt="" />
+              <figcaption class="menu-item fade-in">
+                ミニフルーツタルト
+                <span class="price">￥600</span>
+              </figcaption>
+            </figure>
+            <figure class="menu-item fade-in">
+              <img src="img/muscat-tarte.jpg" alt="" />
+              <figcaption class="menu-item fade-in">
+                マスカットタルト
+                <span class="price">￥600</span>
+              </figcaption>
+            </figure>
+          </section>
+        </section>
+      </div>
+    </main>
+    <footer class="footer">
+      <div class="footer-container wrapper">
+        <ul class="footer-item">
+          <li>
+            <h3 class="footer-title">café <span>Lume</span></h3>
+          </li>
+          <li>〒100-0000 大阪市北区梅田1-1-1</li>
+          <li>TEL:<a href="0612345678">06-1234-5678</a></li>
+          <li>営業時間:09:00 - 20:00 (L.O.19:30)</li>
+        </ul>
+        <ul class="footer-link">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="menu.html">Menu</a></li>
+          <li><a href="contact.html">Contact</a></li>
+          <li><a href="https://www.instagram.com/?hl=ja">Instagram</a></li>
+          <li><a href="https://www.facebook.com/?locale=ja_JP">Facebook</a></li>
+        </ul>
+      </div>
+      <div class="copy-right">
+        <small>&copy;2026 café Lume</small>
+      </div>
+    </footer>
+    <button id="top-button" class="top-button">▲</button>
+  </body>
+</html>
