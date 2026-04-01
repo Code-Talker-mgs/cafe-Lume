@@ -22,6 +22,7 @@
         hamburger.classList.remove("active");
         navItem.classList.remove("open");
         overlay.classList.remove("active");
+        document.documentElement.classList.remove("no-scroll");
         document.body.classList.remove("no-scroll");
         hamburger.focus();
       }
@@ -30,12 +31,14 @@
     // メニューの開閉切り替え
     hamburger.addEventListener("click", () => {
       const isExpanded = hamburger.getAttribute("aria-expanded") === "true";
+      const shouldOpen = !isExpanded;
 
-      hamburger.setAttribute("aria-expanded", !isExpanded);
-      navItem.classList.toggle("open");
-      hamburger.classList.toggle("active");
-      overlay.classList.toggle("active");
-      document.body.classList.toggle("no-scroll");
+      hamburger.setAttribute("aria-expanded", shouldOpen);
+      navItem.classList.toggle("open", shouldOpen);
+      hamburger.classList.toggle("active", shouldOpen);
+      overlay.classList.toggle("active", shouldOpen);
+      document.documentElement.classList.toggle("no-scroll", shouldOpen);
+      document.body.classList.toggle("no-scroll", shouldOpen);
 
       if (!isExpanded && navLinks.length > 0) {
         navLinks[0].focus();
