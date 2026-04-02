@@ -7,6 +7,13 @@
     <meta name="description" content="日常の、ちょっと特別な時間を。" />
     <meta name="robots" content="noindex" />
 
+    <!-- 画面が表示される前にテーマを判定して、一瞬白くなるのを防ぐ -->
+    <script>
+      if (localStorage.getItem("theme") === "dark") {
+        document.documentElement.classList.add("dark-mode");
+      }
+    </script>
+
     <!-- リセットCSS -->
     <link rel="stylesheet" href="https://unpkg.com/ress/dist/ress.min.css" />
     <!-- スタイルCSS -->
@@ -17,7 +24,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-      href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+JP:wght@500&family=Lora:ital,wght@0,400..700;1,400..700&family=M+PLUS+Rounded+1c:wght@700&family=Noto+Serif:ital,wght@1,100..900&family=Philosopher&family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Roboto+Condensed:ital,wght@0,100..900;1,100..900&family=Roboto+Flex:opsz,wght@8..144,100..1000&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap"
+      href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+JP:wght@500&family=Lora:ital,wght@0,400..700;1,400..700&family=Philosopher&display=swap"
       rel="stylesheet"
     />
     <!-- アイコン -->
@@ -134,7 +141,7 @@
             <h3 class="footer-title">café <span>Lume</span></h3>
           </li>
           <li>〒100-0000 大阪市北区梅田1-1-1</li>
-          <li>TEL:<a href="0612345678">06-1234-5678</a></li>
+          <li>TEL:<a href="tel:0612345678">06-1234-5678</a></li>
           <li>営業時間:09:00 - 20:00 (L.O.19:30)</li>
         </ul>
         <ul class="footer-link">

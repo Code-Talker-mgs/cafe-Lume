@@ -1,9 +1,8 @@
 "use strict";
 {
-  
   // ブラウザのスクロール復元挙動を制御（戻った時にトップを表示）
-  if ('scrollRestoration' in history) {
-    history.scrollRestoration = 'manual';
+  if ("scrollRestoration" in history) {
+    history.scrollRestoration = "manual";
   }
 
   // ハンバーガーメニュー
@@ -12,7 +11,7 @@
     const hamburger = document.querySelector(".hamburger-btn");
     const overlay = document.querySelector(".overlay");
     if (!navItem || !hamburger || !overlay) return;
-    
+
     const navLinks = navItem.querySelectorAll("a");
 
     // メニューを閉じる共通処理
@@ -40,7 +39,7 @@
       document.documentElement.classList.toggle("no-scroll", shouldOpen);
       document.body.classList.toggle("no-scroll", shouldOpen);
 
-      if (!isExpanded && navLinks.length > 0) {
+      if (shouldOpen && navLinks.length > 0) {
         navLinks[0].focus();
       }
     });
@@ -71,28 +70,28 @@
   const initDarkTheme = () => {
     const themeBtn = document.querySelector(".theme-btn");
     const icon = themeBtn?.querySelector(".material-symbols-outlined");
-    const themeText = document.querySelector(".theme-text");
-    const savedTheme = localStorage.getItem("theme");
+    // theme-textクラスがなくても、ボタン内のpタグを探すように改良
+    const themeText = themeBtn?.querySelector("p");
 
     // アイコンと文字を更新する関数
     const updateUI = (isDark) => {
-      if (icon) {
-        icon.textContent = isDark ? "dark_mode" : "sunny";
-      }
-      if (themeText) {
-        themeText.textContent = isDark ? "明るくする" : "暗くする";
-      }
+      if (icon) icon.textContent = isDark ? "dark_mode" : "sunny";
+      if (themeText) themeText.textContent = isDark ? "明るくする" : "暗くする";
     };
 
-    // ページ読み込み時に保存された設定を反映
-    if (savedTheme === "dark") {
-      document.body.classList.add("dark-mode");
-      updateUI(true);
-    }
+    // 【重要】htmlタグに既にクラスがついているか（head内のスクリプトの結果）を確認
+    const isDarkInitial =
+      document.documentElement.classList.contains("dark-mode");
+    updateUI(isDarkInitial);
 
     // クリックイベント
     themeBtn?.addEventListener("click", () => {
-      const isDark = document.body.classList.toggle("dark-mode");
+      // bodyではなくhtmlタグ(documentElement)に対して切り替えを行う
+      const isDark = document.documentElement.classList.toggle("dark-mode");
+
+      // body側にも念のため反映（CSSがどちらを向いていても動くようにするため）
+      document.body.classList.toggle("dark-mode", isDark);
+
       // UIを更新
       updateUI(isDark);
       // ローカルストレージの保存
@@ -170,11 +169,9 @@
     });
   };
 
-  window.addEventListener("DOMContentLoaded", () => {
-    initHamburgerMenu();
-    initDarkTheme();
-    initScrollTopButton();
-    initObserver();
-    initAccordionMenu();
-  });
+  initHamburgerMenu();
+  initDarkTheme();
+  initScrollTopButton();
+  initObserver();
+  initAccordionMenu();
 }
