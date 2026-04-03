@@ -109,12 +109,17 @@ a {
   color: var(--bg-sub);
 }
 
+.hamburger-btn:focus:not(:focus-visible) {
+  outline: none;
+}
+
 .hamburger-btn {
   position: fixed;
   inset: 20px 20px auto auto;
   cursor: pointer;
   z-index: 50;
   width: 30px;
+  -webkit-tap-highlight-color: transparent;
 }
 
 @media screen and (min-width: 768px) {
@@ -310,6 +315,12 @@ main {
   box-shadow: 4px 5px #393939;
 }
 
+.menu-btn:focus:not(:focus-visible),
+.contact-btn:focus:not(:focus-visible),
+.submit-btn:focus:not(:focus-visible) {
+  outline: none;
+}
+
 .menu-btn:hover,
 .contact-btn:hover,
 .submit-btn:hover {
@@ -317,7 +328,9 @@ main {
   scale: 1.1;
 }
 
-.menu, .info, .contact {
+.menu,
+.info,
+.contact {
   margin: 5rem 0;
 }
 
@@ -383,19 +396,19 @@ main {
   color: var(--text-main);
 }
 
-.main-menu-text, .main-contact-text {
+.main-menu-text,
+.main-contact-text {
   margin: 6rem 0;
   font-size: 1.3rem;
   line-height: 1.7;
   color: var(--text-main);
   text-align: center;
-  padding: 0 .5rem;
+  padding: 0 0.5rem;
 }
 
 .main-menu-text p {
   padding: 0.5rem 0;
 }
-
 
 .menu-items h2 {
   display: inline-block;
@@ -437,11 +450,11 @@ figcaption span {
 .fade-in {
   opacity: 0;
   transform: translateY(30px) scale(0.95); /* 少し小さくしておく */
-  
+
   /* 時間, 遅延, ベジェ曲線 */
-  transition: 
-    opacity 1.0s cubic-bezier(0.4, 0, 0.2, 1),
-    transform 1.0s cubic-bezier(0.4, 0, 0.2, 1);
+  transition:
+    opacity 1s cubic-bezier(0.4, 0, 0.2, 1),
+    transform 1s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .fade-in.is-visible {
@@ -560,7 +573,7 @@ textarea {
   /* 入力欄の共通設定 */
   width: 100%;
   padding: 0.75rem;
-  border: 1px solid  var(--text-main);
+  border: 1px solid var(--text-main);
   border-radius: 8px;
   box-sizing: border-box;
   font-size: 1rem;
