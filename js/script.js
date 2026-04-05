@@ -1,5 +1,7 @@
 "use strict";
+
 {
+
   // ブラウザのスクロール復元挙動を制御（戻った時にトップを表示）
   if ("scrollRestoration" in history) {
     history.scrollRestoration = "manual";
@@ -88,8 +90,6 @@
     themeBtn?.addEventListener("click", () => {
       // bodyではなくhtmlタグ(documentElement)に対して切り替えを行う
       const isDark = document.documentElement.classList.toggle("dark-mode");
-
-      // body側にも念のため反映（CSSがどちらを向いていても動くようにするため）
       document.body.classList.toggle("dark-mode", isDark);
 
       // UIを更新
@@ -148,7 +148,7 @@
     });
   };
 
-  // FAQアコーディオンの初期化(AI作)
+  // FAQアコーディオン
   const initAccordionMenu = () => {
     // FAQアコーディオンの排他制御
     const allFaqItems = document.querySelectorAll(".faq-item");
@@ -156,11 +156,9 @@
     allFaqItems.forEach((faqItem) => {
       // <details>要素の開閉状態が変化した時（toggleイベント）に実行
       faqItem.addEventListener("toggle", (event) => {
-        // もし開いた状態（openプロパティがtrue）になったら
         if (faqItem.open) {
           allFaqItems.forEach((item) => {
             if (item !== faqItem) {
-              // そのアイテムを閉じる
               item.open = false;
             }
           });

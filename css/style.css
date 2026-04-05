@@ -1,7 +1,8 @@
 @charset "UTF-8";
 
+
+/* ライトモード */
 :root {
-  /* ライトモード */
   --bg-main: #fff;
   --bg-sub: #b86b4b;
   --bg-btn: #613725;
@@ -11,8 +12,8 @@
   --text-link: #fff;
 }
 
+/* ダークモード */
 .dark-mode {
-  /* ダークモード */
   --bg-main: #000;
   --bg-sub: #833818;
   --bg-btn: #b86b4b;
@@ -21,6 +22,7 @@
   --text-main: #fff;
   --text-link: #1e1e1e;
 }
+
 
 /* 共通スタイル */
 html {
@@ -65,13 +67,13 @@ a {
   padding: 0 3%;
 }
 
-/*======== header ========*/
+/*  ヘッダー  */
 
 .header {
   position: fixed;
   width: 100%;
   height: 90px;
-  z-index: 40; /* ヘッダーを最前面に固定 */
+  z-index: 40; 
 }
 
 .header-container {
@@ -158,7 +160,7 @@ a {
   position: fixed;
   box-sizing: border-box;
   top: 0;
-  right: -100%; /*ここを変更*/
+  right: -100%;
   padding: 20px;
   width: 200px;
   height: 100%;
@@ -449,9 +451,7 @@ figcaption span {
 
 .fade-in {
   opacity: 0;
-  transform: translateY(30px) scale(0.95); /* 少し小さくしておく */
-
-  /* 時間, 遅延, ベジェ曲線 */
+  transform: translateY(30px) scale(0.95);
   transition:
     opacity 1s cubic-bezier(0.4, 0, 0.2, 1),
     transform 1s cubic-bezier(0.4, 0, 0.2, 1);
@@ -464,11 +464,10 @@ figcaption span {
 
 /*  お問い合わせページ  */
 
-/* FAQセクション全体(AI作) */
+
 .faq-container {
   max-width: 800px;
-  margin: 0 auto 80px; /* 中央寄せしつつ、下に余白を作ってフッターとの距離を確保 */
-  padding: 0 20px;
+  margin: 0 auto 80px;
 }
 
 .faq-title {
@@ -478,34 +477,29 @@ figcaption span {
   margin: 5rem 0;
 }
 
-/* アコーディオンの各アイテム */
 .faq-item {
   border-bottom: 1px solid #e0e0e0;
   margin-bottom: 10px;
 }
 
-/* 質問部分（クリックエリア） */
 .faq-question {
-  padding: 20px 40px 20px 10px; /* 右側のパディングはアイコン用に広く */
+  padding: 20px 40px 20px 10px;
   font-weight: bold;
   cursor: pointer;
-  list-style: none; /* デフォルトの三角アイコンを消す */
+  list-style: none; 
   position: relative;
   transition: background-color 0.3s;
   color: var(--text-main);
 }
 
-/* Safariなどでデフォルトの三角が消えない場合の対策 */
 .faq-question::-webkit-details-marker {
   display: none;
 }
 
-/* ホバー時のスタイル */
 .faq-question:hover {
   background-color: var(--bg-content);
 }
 
-/* 自作のアイコン（＋マーク）を作成 */
 .faq-question::after {
   content: "+";
   position: absolute;
@@ -517,17 +511,15 @@ figcaption span {
   transition: transform 0.3s ease;
 }
 
-/* アコーディオンが開いている時（open属性がある時）のスタイル */
 .faq-item[open] .faq-question::after {
-  transform: translateY(-50%) rotate(45deg); /* ＋を回転させて×にする */
+  transform: translateY(-50%) rotate(45deg); 
 }
 
-/* 回答部分 */
 .faq-answer {
   padding: 10px 20px 30px;
   line-height: 1.8;
   color: var(--text-main);
-  animation: fadeIn 0.5s ease; /* ふわっと表示させるアニメーション */
+  animation: fadeIn 0.5s ease;
 }
 
 /* フェードインアニメーション */
@@ -555,7 +547,6 @@ figcaption span {
 }
 
 .field {
-  /* 項目ごとの間隔 */
   margin-bottom: 1.5rem;
 }
 
@@ -570,7 +561,6 @@ label {
 input[type="text"],
 input[type="email"],
 textarea {
-  /* 入力欄の共通設定 */
   width: 100%;
   padding: 0.75rem;
   border: 1px solid var(--text-main);
@@ -582,7 +572,6 @@ textarea {
 
 input:focus,
 textarea:focus {
-  /* 入力中(クリックした時)の色を変える */
   outline: none;
   border-color: #007bff;
   box-shadow: 0 0 5px rgba(0, 123, 255, 0.2);
