@@ -53,16 +53,16 @@
             aria-controls="nav-item"
             aria-label="メニューを開閉する"
           >
-            <span></span>
-            <span></span>
-            <span></span>
+            <span class="hamburger-line" aria-hidden="true"></span>
+            <span class="hamburger-line" aria-hidden="true"></span>
+            <span class="hamburger-line" aria-hidden="true"></span>
           </button>
           <ul id="nav-item" class="nav-items">
             <li><a href="index.html">ホーム</a></li>
             <li><a href="menu.html">メニュー</a></li>
             <li><a href="contact.html">お問い合わせ</a></li>
             <li>
-              <button class="theme-btn">
+              <button class="theme-btn" aria-label="ダークモードに切り替え">
                 <span class="material-symbols-outlined"> dark_mode </span>
                 <p>暗くする</p>
               </button>
@@ -266,14 +266,16 @@
     </main>
     <footer class="footer">
       <div class="footer-container wrapper">
-        <ul class="footer-item">
-          <li>
-            <h3 class="footer-title">café <span>Lume</span></h3>
-          </li>
-          <li>〒100-0000 大阪市北区梅田1-1-1</li>
-          <li>TEL:<a href="tel:0612345678">06-1234-5678</a></li>
-          <li>営業時間:09:00 - 20:00 (L.O.19:30)</li>
-        </ul>
+        <div class="footer-info">
+          <h3 class="footer-title">café <span>Lume</span></h3>
+          <address>
+            <ul class="footer-item">
+              <li>〒100-0000 大阪市北区梅田1-1-1</li>
+              <li>TEL:<a href="tel:0612345678">06-1234-5678</a></li>
+              <li>営業時間:09:00 - 20:00 (L.O.19:30)</li>
+            </ul>
+          </address>
+        </div>
         <ul class="footer-link">
           <li><a href="index.html">Home</a></li>
           <li><a href="menu.html">Menu</a></li>

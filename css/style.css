@@ -61,6 +61,10 @@ a {
   text-decoration: none;
 }
 
+address {
+  font-style: normal;
+}
+
 .wrapper {
   max-width: 1320px;
   margin: 0 auto;
@@ -283,20 +287,20 @@ main {
   object-fit: cover;
 }
 
-.menu,
+.concept,
 .contact {
   margin: 3rem 0;
   text-align: center;
 }
 
-.menu-title,
+.concept-title,
 .info-title,
 .contact-title {
   font-size: 1.2rem;
   color: var(--text-main);
 }
 
-.menu-text,
+.concept-text,
 .info-text,
 .contact-text {
   padding: 1rem;
@@ -330,7 +334,7 @@ main {
   scale: 1.1;
 }
 
-.menu,
+.concept,
 .info,
 .contact {
   margin: 5rem 0;

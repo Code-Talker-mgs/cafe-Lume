@@ -53,9 +53,9 @@
             aria-controls="nav-item"
             aria-label="メニューを開閉する"
           >
-            <span></span>
-            <span></span>
-            <span></span>
+            <span class="hamburger-line" aria-hidden="true"></span>
+            <span class="hamburger-line" aria-hidden="true"></span>
+            <span class="hamburger-line" aria-hidden="true"></span>
           </button>
           <ul id="nav-item" class="nav-items">
             <li><a href="index.html">ホーム</a></li>
@@ -77,9 +77,9 @@
         <img src="img/hero.jpg" alt="カフェの内観" />
       </div>
       <div class="wrapper">
-        <section class="menu">
-          <h2 class="menu-title">日常の、ちょっと特別な時間を。</h2>
-          <p class="menu-text">
+        <section class="concept">
+          <h2 class="concept-title">日常の、ちょっと特別な時間を。</h2>
+          <p class="concept-text">
             ゆったりとした空間で、自家焙煎コーヒーと季節のスイーツを。
           </p>
           <a href="menu.html" class="menu-btn">メニューを見る</a>
@@ -130,14 +130,16 @@
     </main>
     <footer class="footer">
       <div class="footer-container wrapper">
-        <ul class="footer-item">
-          <li>
-            <h3 class="footer-title">café <span>Lume</span></h3>
-          </li>
-          <li>〒100-0000 大阪市北区梅田1-1-1</li>
-          <li>TEL:<a href="tel:0612345678">06-1234-5678</a></li>
-          <li>営業時間:09:00 - 20:00 (L.O.19:30)</li>
-        </ul>
+        <div class="footer-info">
+          <h3 class="footer-title">café <span>Lume</span></h3>
+          <address>
+            <ul class="footer-item">
+              <li>〒100-0000 大阪市北区梅田1-1-1</li>
+              <li>TEL:<a href="tel:0612345678">06-1234-5678</a></li>
+              <li>営業時間:09:00 - 20:00 (L.O.19:30)</li>
+            </ul>
+          </address>
+        </div>
         <ul class="footer-link">
           <li><a href="index.html">Home</a></li>
           <li><a href="menu.html">Menu</a></li>
