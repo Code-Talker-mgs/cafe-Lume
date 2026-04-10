@@ -1,6 +1,5 @@
 @charset "UTF-8";
 
-
 /* ライトモード */
 :root {
   --bg-main: #fff;
@@ -22,7 +21,6 @@
   --text-main: #fff;
   --text-link: #1e1e1e;
 }
-
 
 /* 共通スタイル */
 html {
@@ -46,7 +44,6 @@ body {
 html.no-scroll,
 body.no-scroll {
   overflow: hidden;
-  touch-action: none;
 }
 
 img {
@@ -77,7 +74,7 @@ address {
   position: fixed;
   width: 100%;
   height: 90px;
-  z-index: 40; 
+  z-index: 40;
 }
 
 .header-container {
@@ -167,8 +164,10 @@ address {
   right: -100%;
   padding: 20px;
   width: 200px;
-  height: 100%;
-  z-index: 30;
+  height: 100dvh;
+  overflow-y: auto;
+  overscroll-behavior: contain;
+  z-index: 45;
   transition: right 0.5s ease-in-out;
 }
 
@@ -262,6 +261,7 @@ address {
 .overlay.active {
   opacity: 1;
   visibility: visible;
+  touch-action: none;
 }
 
 /*  メインエリア  */
@@ -468,7 +468,6 @@ figcaption span {
 
 /*  お問い合わせページ  */
 
-
 .faq-container {
   max-width: 800px;
   margin: 0 auto 80px;
@@ -490,7 +489,7 @@ figcaption span {
   padding: 20px 40px 20px 10px;
   font-weight: bold;
   cursor: pointer;
-  list-style: none; 
+  list-style: none;
   position: relative;
   transition: background-color 0.3s;
   color: var(--text-main);
@@ -516,7 +515,7 @@ figcaption span {
 }
 
 .faq-item[open] .faq-question::after {
-  transform: translateY(-50%) rotate(45deg); 
+  transform: translateY(-50%) rotate(45deg);
 }
 
 .faq-answer {
